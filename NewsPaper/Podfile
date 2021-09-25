@@ -1,0 +1,20 @@
+platform :ios, '13.0'
+
+target 'NewsPaper' do
+  use_frameworks!
+
+  pod 'Moya'
+  pod 'Moya/RxSwift'
+  pod 'RxCocoa'
+  pod 'Kingfisher'
+  pod 'lottie-ios'
+  target 'NewsPaperTests' do
+    inherit! :search_paths
+  pod 'RxTest'
+  end
+
+  target 'NewsPaperUITests' do
+    # Pods for testing
+  end
+
+end
