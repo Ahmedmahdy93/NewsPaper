@@ -54,7 +54,7 @@ extension NewsTarget: TargetType {
             var urlParams = [String:Any]()
             urlParams = [
                 "q": keyword,
-                "api_key": NewsTarget.apiKey,
+                "apiKey": NewsTarget.apiKey,
                 "pageSize": NewsTarget.perPage,
                 "page": page
             ]
