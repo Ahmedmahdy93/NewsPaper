@@ -9,6 +9,7 @@ import UIKit
 import CoreData
 import RxSwift
 import RxCocoa
+import SwiftUI
 
 class HomeViewController: UIViewController {
 
@@ -154,6 +155,13 @@ extension HomeViewController: UISearchControllerDelegate, UISearchBarDelegate {
 
 // MARK: - collectionView layout delegates
 extension HomeViewController:  UITableViewDelegate {
+    func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+        let article = articles.value[indexPath.row]
+        if let viewController = DetailsViewController.instantiateFromNib() {
+            viewController.article = article
+            self.navigationController?.pushViewController(viewController, animated: true)
+        }
+    }
     func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
         return 400
     }
