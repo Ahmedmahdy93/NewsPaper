@@ -36,7 +36,7 @@ extension NewsTarget: TargetType {
     }
     
     public var sampleData: Data {
-        if let path = Bundle.main.path(forResource: "ImageResultMock", ofType: "json") {
+        if let path = Bundle.main.path(forResource: "NewsResultMock", ofType: "json") {
             do {
                   let data = try Data(contentsOf: URL(fileURLWithPath: path), options: .mappedIfSafe)
                 return data
