@@ -16,7 +16,7 @@ class HomeViewModel: BaseViewModel {
     public let lastSearchTerms: PublishSubject<[String]> = PublishSubject()
     var isError: PublishSubject<Error> = PublishSubject()
     var disposeBag: DisposeBag = DisposeBag()
-    private var repository: FlickrSearchRepository
+    private var repository: NewsSearchRepository
     
     private let dataManager = coreDataManager()
     private var keyword = ""
@@ -24,7 +24,7 @@ class HomeViewModel: BaseViewModel {
     private var totalPages = 1
     private(set) var articleArray = [Article]()
     
-    init (_ repo: FlickrSearchRepository = FlickrSearchRepository()) {
+    init (_ repo: NewsSearchRepository = NewsSearchRepository()) {
         repository = repo
     }
     func search(with text: String) {
